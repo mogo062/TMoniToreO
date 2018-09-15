@@ -1,3 +1,45 @@
-<p>
-  login works!
-</p>
+<div class="login-wrapper">
+    <form class="login" (ngSubmit)="login()">
+        <section class="title">
+            <h3 class="welcome">Welcome to</h3>
+            MoniToreO Solution
+            <!--h5 class="hint">Use your Company ID to sign in or create one now</h5-->
+        </section>
+        <div class="login-group">
+            <div class="auth-source select">
+                <select id="login-auth-source-1">
+                    <option>Local Users</option>
+                    <option>Administrator</option>
+                </select>
+            </div>
+            <input class="username" type="text" name="username" id="username" [(ngModel)]="user.username" placeholder="Username" [ngModelOptions]="{standalone: true}">
+            <input class="password" type="password" name="password" id="password" [(ngModel)]="user.password" placeholder="Password" [ngModelOptions]="{standalone: true}">
+            <div class="checkbox">
+                <input type="checkbox" id="rememberme">
+                <label for="rememberme">
+                    Remember me
+                </label>
+            </div>
+            <!--div class="error active">
+                Invalid user name or password
+            </div -->
+            <button type="submit" class="btn btn-primary" >LogIn</button>
+            <!--a href="javascript://" class="signup">Sign up for a Company ID</a-->
+        </div>
+    </form>
+</div>
+
+<!--div class="content-container">
+  <div class="content-area">
+    <div class="login-wrapper">
+      <form class="login" (ngSubmit)="login()">
+        <label class="title">Login to Community</label>
+        <div class="login-group">
+          <input class="username" name="username" [(ngModel)]="user.username" type="text" id="login_username" placeholder="Username">
+          <input class="password" name="password" [(ngModel)]="user.password" type="password" id="login_password" placeholder="Password">
+          <button type="submit" class="btn btn-primary">LOG IN</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div-->

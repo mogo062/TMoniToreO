@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { UserService } from '../../services/user.service';
+import  { User } from '../../services/user.model';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,9 +11,18 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router : Router, private route : ActivatedRoute) { }
+  private user : User;
+
+  constructor(private userService : UserService, private router : Router, private route : ActivatedRoute) {
+    this.user = userService.getUser();
+  }
 
   ngOnInit() {
+  }
+
+  login(){
+    this.userService.login(this.user);
+    console.log("0 ", this.userService.isConnected());
   }
 
 }

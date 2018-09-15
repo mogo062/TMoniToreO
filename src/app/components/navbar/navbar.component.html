@@ -9,9 +9,11 @@
       <!--a href="#" class="nav-link" routerLink="/forums"><span class="nav-text">Forums</span></a-->
       <!--a href="#" class="nav-link" routerLink="/blogs"><span class="nav-text">Blogs</span></a-->
     </div>
-    <div class="header-actions">
-        <a class="nav-link nav-icon" (click)="logout()">
-           <clr-icon shape="logout"></clr-icon>
-         </a>
+    <div class="header-actions" >
+
+         <a class="nav-link nav-icon" (click)="logout()" *ngIf="userService.isConnected()">
+            <clr-icon shape="logout"></clr-icon>
+          </a>
     </div>
+
 </clr-header>

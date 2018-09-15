@@ -7,6 +7,14 @@
     <!--nav class="sidenav" [clr-nav-level]="2">
         ...
     </nav-->
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed" *ngIf="userService.isConnected()">
+
+      <a clrVerticalNavLink  *ngFor="let menu of menuService.getMenu()" [routerLink]="menu.link" [routerLinkActive]="menu.state">
+          <clr-icon clrVerticalNavIcon [attr.shape]="menu.icon"></clr-icon>
+         {{menu.text}}
+      </a>
+
+    </clr-vertical-nav>
   </div>
 
 </clr-main-container>
