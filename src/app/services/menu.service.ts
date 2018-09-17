@@ -10,7 +10,7 @@ export class MenuService {
 
   setMenu(): void{
     this.linksMenu = [];
-    this.linksMenu.push(new MenuLink('./xxx', 'active', 'T24 Dashboard', 'home'));
+  //  this.linksMenu.push(new MenuLink('./xxx', 'active', 'T24 Dashboard', 'home'));
     this.linksMenu.push(new MenuLink('./t24/cobmonitor', 'active', 'Cob Monitor', 'user'));
     this.linksMenu.push(new MenuLink('./electric', 'active', 'Electric', 'bolt'));
     this.linksMenu.push(new MenuLink('./poison', 'active', 'Poison', 'sad-face'));
