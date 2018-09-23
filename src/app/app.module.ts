@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ClarityModule } from '@clr/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
@@ -34,6 +34,7 @@ import { MenuService } from './services/menu.service';
     BrowserAnimationsModule,
     ClarityModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     T24Module,
     AppRoutingModule

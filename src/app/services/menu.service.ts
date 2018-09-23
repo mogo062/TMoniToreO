@@ -12,7 +12,7 @@ export class MenuService {
     this.linksMenu = [];
   //  this.linksMenu.push(new MenuLink('./xxx', 'active', 'T24 Dashboard', 'home'));
     this.linksMenu.push(new MenuLink('./t24/cobmonitor', 'active', 'Cob Monitor', 'user'));
-    this.linksMenu.push(new MenuLink('./electric', 'active', 'Electric', 'bolt'));
+    this.linksMenu.push(new MenuLink('./t24/archiving', 'active', 'T24 Archive', 'bolt'));
     this.linksMenu.push(new MenuLink('./poison', 'active', 'Poison', 'sad-face'));
     this.linksMenu.push(new MenuLink('./grass', 'active', 'Grass', 'bug'));
   }

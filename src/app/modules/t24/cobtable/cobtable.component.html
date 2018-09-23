@@ -1,0 +1,58 @@
+<div class="row">
+	<div class="col-lg-12">
+        <div class="table-responsive">
+        	 <table class="table table-striped table-hover table-bordered table-condensed">
+        		  <thead>
+          			<tr>
+          				<th colspan="5" class="text-center"><small>{{title}}</small></th>
+          			</tr>
+          			<tr>
+          				<th class="text-center"><small>STAGE</small></th>
+          				<th class="text-center"><small>RUNNING</small></th>
+          				<th class="text-center"><small>PROCESSED</small></th>
+          				<th class="text-center"><small>TOTAL</small></th>
+          				<th class="text-center"><small>% Completed</small></th>
+          			</tr>
+          		 </thead>
+        		  <tbody>
+      					<!-- tr ng-repeat="(key,stage) in $ctrl.data" -->
+                <tr>
+          					<td class="text-center"><small>APPLICATION</small></td>
+           					<td class="text-center"><small>{{data.running.A}}</small></td>
+           					<td class="text-center"><small>{{data.completed.A}}</small></td>
+           					<td class="text-center"><small>{{data.total.A}}</small></td>
+           					<td class="text-center"><small>{{data.percentage.A}}</small></td>
+       					</tr>
+            			<tr>
+            				<td class="text-center"><small>SYSTEM WIDE</small></td>
+                    <td class="text-center"><small>{{data.running.S}}</small></td>
+           					<td class="text-center"><small>{{data.completed.S}}</small></td>
+           					<td class="text-center"><small>{{data.total.S}}</small></td>
+           					<td class="text-center"><small>{{data.percentage.S}}</small></td>
+            			</tr>
+    					<tr>
+            				<td class="text-center"><small>REPORTING</small></td>
+                    <td class="text-center"><small>{{data.running.R}}</small></td>
+           					<td class="text-center"><small>{{data.completed.R}}</small></td>
+           					<td class="text-center"><small>{{data.total.R}}</small></td>
+           					<td class="text-center"><small>{{data.percentage.R}}</small></td>
+            			</tr>
+        				<tr>
+            				<td class="text-center"><small>START OF DAY</small></td>
+                    <td class="text-center"><small>{{data.running.D}}</small></td>
+                    <td class="text-center"><small>{{data.completed.D}}</small></td>
+                    <td class="text-center"><small>{{data.total.D}}</small></td>
+                    <td class="text-center"><small>{{data.percentage.D}}</small></td>
+            			</tr>
+            			<tr>
+            				<td class="text-center"><small>ONLINE</small></td>
+                    <td class="text-center"><small>{{data.running.O}}</small></td>
+                    <td class="text-center"><small>{{data.completed.O}}</small></td>
+                    <td class="text-center"><small>{{data.total.O}}</small></td>
+                    <td class="text-center"><small>{{data.percentage.O}}</small></td>
+            			</tr>
+        			</tbody>
+			     </table>
+        </div>
+    </div>
+ </div>
