@@ -16,6 +16,10 @@
 				cursor: pointer;
 				white-space: nowrap;
 	}
+  .z-button-square {
+       width:135px;
+       height:135px;
+  }
 	.z-button:active, .z-button:hover {
 				background: -webkit-linear-gradient(top, #eeeeee 0%, #eeeeee 100%);
 				//background: linear-gradient(to bottom, #fefefe 0%, #eeeeee 100%);

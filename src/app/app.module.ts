@@ -18,7 +18,11 @@ import { LoginComponent } from './components/login/login.component';
 import { UserService } from './services/user.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { MenuService } from './services/menu.service';
-
+import { DomService } from './services/dom.service';
+import { ModalService } from './services/modal.service';
+import { AlertComponent } from './components/alert/alert.component';
+import { AlertService } from './services/alert.service';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 
@@ -27,7 +31,9 @@ import { MenuService } from './services/menu.service';
     AppComponent,
     NotFoundComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    AlertComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -38,13 +44,17 @@ import { MenuService } from './services/menu.service';
     FormsModule,
     T24Module,
     AppRoutingModule
-
-
   ],
   providers: [
     AuthGuardService,
     UserService,
-    MenuService
+    MenuService,
+    AlertService, // to share service between component
+    DomService,
+    ModalService
+  ],
+  entryComponents : [
+    ModalComponent
   ],
   bootstrap: [AppComponent]
 })
