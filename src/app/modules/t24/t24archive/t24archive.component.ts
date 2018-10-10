@@ -42,8 +42,8 @@ export class T24archiveComponent implements OnInit {
     this.modalRef.instance.bean = {};
     this.modalRef.instance.onClose.subscribe((event : any) => {
       this.destroyModal();
-    })
-    console.log(this.modalRef)
+    });
+    //console.log(this.modalRef)
     this.modalRef.changeDetectorRef.detectChanges();
   //  setTimeout(() => this.destroyModal(), 5000);
   }

@@ -26,13 +26,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   close(){
     this.onClose.emit(null);
     //this.modalService.destroy();
-    /*
-    console.log(this.modalRef);
-    if (this.modalRef) {
-     this.modalRef.destroy();
-      delete this.modalRef;
-    }
-    */
+
   }
 
 
