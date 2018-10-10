@@ -1,4 +1,4 @@
-import { Component,ElementRef, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component,ElementRef, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 
 import { ModalService } from '../../services/modal.service';
 
@@ -8,29 +8,24 @@ import { ModalService } from '../../services/modal.service';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit, OnDestroy {
-  private element: any;
-  private hide: boolean = false;
-
   @Input()
   modalRef : any;
   @Input()
   bean : any;
+  @Output()
+  onClose : EventEmitter<null> = new EventEmitter<null>();
 
 
 
-  constructor(private el : ElementRef, private modalService : ModalService) {
-    this.element = el;
-  }
+  constructor(private elementRef : ElementRef, private modalService : ModalService) {  }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-  ngOnDestroy(){
-
-  }
+  ngOnDestroy(){  }
 
   close(){
-    this.modalService.destroy();
+    this.onClose.emit(null);
+    //this.modalService.destroy();
     /*
     console.log(this.modalRef);
     if (this.modalRef) {

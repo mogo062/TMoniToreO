@@ -21,14 +21,16 @@ export class T24archiveComponent implements OnInit {
 
 
   addProcedure(){
-  /*  this.alertService.alert(true, 5000, 'W', "Do you have idea ! "+new Date());
+    this.alertService.alert(true, 5000, 'W', "Do you have idea ! "+new Date());
     this.showModal();
-    console.log(this);*/
-
+    console.log(this);
+/*
     let inputs = {
      bean: 'Mongi'
     }
    this.modalService.init(ModalComponent, inputs, {});
+
+   */
   }
 
   showModal() {
@@ -38,8 +40,10 @@ export class T24archiveComponent implements OnInit {
     }
     this.modalRef.instance.modalRef = this.modalRef;
     this.modalRef.instance.bean = {};
-
-
+    this.modalRef.instance.onClose.subscribe((event : any) => {
+      this.destroyModal();
+    })
+    console.log(this.modalRef)
     this.modalRef.changeDetectorRef.detectChanges();
   //  setTimeout(() => this.destroyModal(), 5000);
   }
