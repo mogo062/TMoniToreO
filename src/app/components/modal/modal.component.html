@@ -1,17 +1,58 @@
 <div class="modal">
-    <div class="modal-dialog" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="modal-header">
                 <button aria-label="Close" class="close" type="button" (click)="close()">
                     <clr-icon aria-hidden="true" shape="close"></clr-icon>
                 </button>
-                <h3 class="modal-title">I have a nice title {{bean}}</h3>
+                <h3 class="modal-title">{{title}}</h3>
             </div>
+            <clr-datagrid class="datagrid-compact">
+              <clr-dg-column *ngFor="let key of keys" [clrDgField]="key">{{key}}</clr-dg-column>
+              <clr-dg-row *clrDgItems="let bean of beans" [clrDgItem]="bean">
+                  <clr-dg-action-overflow>
+                     <button class="action-item" (click)="onEdit(bean)">Edit</button>
+                     <button class="action-item" (click)="onDelete(bean)">Delete</button>
+                 </clr-dg-action-overflow>
+                  <clr-dg-cell *ngFor="let key of keys">{{bean[key]}}</clr-dg-cell>
+              </clr-dg-row>
+              <clr-dg-footer>
+                  {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} rows
+                <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
+              </clr-dg-footer>
+            </clr-datagrid>
+
+            <!--clr-datagrid class="datagrid-compact">
+              <clr-dg-column [clrDgField]="'id'">id</clr-dg-column>
+              <clr-dg-column [clrDgField]="'procLabel'">procLabel</clr-dg-column>
+              <clr-dg-column [clrDgField]="'procName'">procName</clr-dg-column>
+              <clr-dg-column [clrDgField]="'retention'">retention</clr-dg-column>
+              <clr-dg-column></clr-dg-column>
+
+              <clr-dg-row *clrDgItems="let bean of beans" [clrDgItem]="bean">
+                  <clr-dg-action-overflow>
+                     <button class="action-item" (click)="onEdit(bean)">Edit</button>
+                     <button class="action-item" (click)="onDelete(bean)">Delete</button>
+                 </clr-dg-action-overflow>
+                  <clr-dg-cell>{{bean.id}}</clr-dg-cell>
+                  <clr-dg-cell>{{bean.procLabel}}</clr-dg-cell>
+                  <clr-dg-cell>{{bean.procName}}</clr-dg-cell>
+                  <clr-dg-cell>{{bean.retention}}</clr-dg-cell>
+                  <clr-dg-cell>
+                    <button class="btn btn-sm" (click)="buy(stock)">Buy</button>
+                  </clr-dg-cell>
+              </clr-dg-row>
+
+              <clr-dg-footer>
+                  {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} rows
+                <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
+              </clr-dg-footer>
+            </clr-datagrid-->
             <div class="modal-body">
-                <p>But not much to say...</p>
+
             </div>
             <div class="modal-footer">
-                <button class="btn btn-outline" type="button" (click)="close()">Cancel</button>
+                <!--button class="btn btn-outline" type="button" (click)="close()">Cancel</button-->
                 <button class="btn btn-primary" type="button">Ok</button>
             </div>
         </div>

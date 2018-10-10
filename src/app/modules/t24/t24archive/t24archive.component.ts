@@ -4,6 +4,8 @@ import { ViewChild, ComponentFactoryResolver, ComponentRef, ViewContainerRef } f
 import { AlertService } from  '../../../services/alert.service';
 import { ModalService } from '../../../services/modal.service';
 
+import { ArchService } from '../../../services/arch.service';
+
 import { ModalComponent } from '../../../components/modal/modal.component';
 
 @Component({
@@ -15,37 +17,34 @@ export class T24archiveComponent implements OnInit {
   modalRef: ComponentRef<ModalComponent>;
   @ViewChild('modalBox', {read: ViewContainerRef}) modalBox: ViewContainerRef;
 
-  constructor(private alertService : AlertService, private modalService : ModalService, private ComponentFactoryResolver: ComponentFactoryResolver) { }
+  constructor(private alertService : AlertService, private modalService : ModalService, private archService : ArchService, private ComponentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {  }
 
 
   addProcedure(){
-    this.alertService.alert(true, 5000, 'W', "Do you have idea ! "+new Date());
     this.showModal();
     console.log(this);
-/*
-    let inputs = {
-     bean: 'Mongi'
-    }
-   this.modalService.init(ModalComponent, inputs, {});
-
-   */
   }
 
   showModal() {
-    if (!this.modalRef) {
-      const modalComponent = this.ComponentFactoryResolver.resolveComponentFactory(ModalComponent);
-      this.modalRef = this.modalBox.createComponent(modalComponent);
-    }
-    this.modalRef.instance.modalRef = this.modalRef;
-    this.modalRef.instance.bean = {};
-    this.modalRef.instance.onClose.subscribe((event : any) => {
-      this.destroyModal();
+    this.archService.getT24ArchiveProcedure().subscribe(success => {
+        if (!this.modalRef) {
+          const modalComponent = this.ComponentFactoryResolver.resolveComponentFactory(ModalComponent);
+          this.modalRef = this.modalBox.createComponent(modalComponent);
+        }
+        this.modalRef.instance.title="Add Archiving Procedure";
+        this.modalRef.instance.beans = success;
+        this.modalRef.instance.onClose.subscribe((event : any) => {
+          this.destroyModal();
+        });
+        this.modalRef.changeDetectorRef.detectChanges();
+      }, error => {
+        console.log(error);
+        this.alertService.alert(true, 5000, 'D', new Date()+" - "+error.message);
+        return [];
     });
-    //console.log(this.modalRef)
-    this.modalRef.changeDetectorRef.detectChanges();
-  //  setTimeout(() => this.destroyModal(), 5000);
+    //setTimeout(() => this.destroyModal(), 5000);
   }
 
   destroyModal() {
@@ -53,6 +52,5 @@ export class T24archiveComponent implements OnInit {
         this.modalRef.destroy();
         delete this.modalRef;
       }
-    }
-
+  }
 }

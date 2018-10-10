@@ -17,6 +17,9 @@ import { CobtableComponent } from './cobtable/cobtable.component';
 import { T24archiveComponent } from './t24archive/t24archive.component';
 
 
+//import { AlertComponent } from '../../components/alert/alert.component';
+//import { AlertService } from '../../services/alert.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -32,7 +35,11 @@ import { T24archiveComponent } from './t24archive/t24archive.component';
     ChartDirective,
     CobtableComponent,
     T24archiveComponent
+    //AlertComponent
 
+  ],
+  providers:[
+  //  AlertService
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

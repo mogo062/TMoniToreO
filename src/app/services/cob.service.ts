@@ -20,7 +20,7 @@ export class CobService {
   //  headers.append('Content-Type', 'application/json;charset=UTF-8');
   //  headers.append('Accept', 'application/json');
 
-    console.log(ConfigService.get('baseWs')+'/cob/cobmonitor');
+    //console.log(ConfigService.get('baseWs')+'/cob/cobmonitor');
     return this.http.get(ConfigService.get('baseWs')+'/cob/monitor');
   }
 

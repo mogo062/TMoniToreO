@@ -1,6 +1,7 @@
 import { Component,ElementRef, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 
 import { ModalService } from '../../services/modal.service';
+import { procArch } from '../../services/arch.service';
 
 @Component({
   selector: 'modal',
@@ -8,18 +9,27 @@ import { ModalService } from '../../services/modal.service';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit, OnDestroy {
+
   @Input()
-  modalRef : any;
+  title : string="";
   @Input()
-  bean : any;
+  beans : object[] = [];
   @Output()
   onClose : EventEmitter<null> = new EventEmitter<null>();
+
+  private keys : any =[];
 
 
 
   constructor(private elementRef : ElementRef, private modalService : ModalService) {  }
 
-  ngOnInit() { }
+  ngOnInit() {
+    console.log("beans : ",this.beans);
+    if(this.beans.length != 0){
+      this.keys = Object.keys(this.beans[0]);
+    //  console.log(Object.keys(this.beans[0]));
+    }
+  }
 
   ngOnDestroy(){  }
 
