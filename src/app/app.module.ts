@@ -23,6 +23,8 @@ import { ModalService } from './services/modal.service';
 import { AlertComponent } from './components/alert/alert.component';
 import { AlertService } from './services/alert.service';
 import { ModalComponent } from './components/modal/modal.component';
+import { SplitPipe } from './services/split.pipe';
+import { IsdatePipe } from './services/isdate.pipe';
 
 
 
@@ -33,7 +35,9 @@ import { ModalComponent } from './components/modal/modal.component';
     NavbarComponent,
     LoginComponent,
     AlertComponent,
-    ModalComponent
+    ModalComponent,
+    SplitPipe,
+    IsdatePipe
   ],
   imports: [
     BrowserModule,

@@ -39,6 +39,7 @@ export class CobMonitorComponent implements OnInit, OnDestroy {
         this.refresh=false;
         clearInterval(this.interval);
     }else{
+      this.refresh=true;  // add 14/10/2018 to resolve the cob refresh after reset refresh
       // reactivate trigger cob
       this.cobProcessing();
     }
