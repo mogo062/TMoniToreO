@@ -17,11 +17,35 @@ export class T24archiveComponent implements OnInit {
   modalRef: ComponentRef<ModalComponent>;
   @ViewChild('modalBox', {read: ViewContainerRef}) modalBox: ViewContainerRef;
 
-  constructor(private alertService : AlertService, private modalService : ModalService, private archService : ArchService, private ComponentFactoryResolver: ComponentFactoryResolver) { }
+  constructor( private alertService : AlertService, private modalService : ModalService, private archService : ArchService, private ComponentFactoryResolver: ComponentFactoryResolver) { }
 
-  ngOnInit() {  }
+  ngOnInit() {
 
-
+  }
+  config = [
+      {
+        type: 'input',
+        label: 'Full name',
+        name: 'name',
+        placeholder: 'Enter your name',
+      },
+      {
+        type: 'select',
+        label: 'Favourite food',
+        name: 'food',
+        options: ['Pizza', 'Hot Dogs', 'Knakworstje', 'Coffee'],
+        placeholder: 'Select an option',
+      },
+      {
+        label: 'Submit',
+        name: 'submit',
+        type: 'button',
+      },
+    ];
+    formSubmitted(value) {
+        console.log(value);
+      }
+      
   addProcedure(){
     this.archService.getT24ArchiveProcedure().subscribe(success => {
         if (!this.modalRef) {

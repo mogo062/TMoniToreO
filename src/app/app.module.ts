@@ -35,9 +35,7 @@ import { IsdatePipe } from './services/isdate.pipe';
     NavbarComponent,
     LoginComponent,
     AlertComponent,
-    ModalComponent,
-    SplitPipe,
-    IsdatePipe
+    ModalComponent
   ],
   imports: [
     BrowserModule,

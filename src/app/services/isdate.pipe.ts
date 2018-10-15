@@ -15,7 +15,6 @@ export class IsdatePipe implements PipeTransform {
         console.log(value);
         return this.datePipe.transform(value, 'dd/MM/yyyy');
       }
-
     }
 
     return value;

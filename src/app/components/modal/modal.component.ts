@@ -1,5 +1,4 @@
 import { Component,ElementRef, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
-
 import { ModalService } from '../../services/modal.service';
 //import { procArch } from '../../services/arch.service';
 
@@ -20,7 +19,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   keys : any;
 
 
-  constructor(private elementRef : ElementRef, private modalService : ModalService) {  }
+  constructor( private elementRef : ElementRef, private modalService : ModalService) {  }
 
   ngOnInit() {
     console.log("beans : ", this.beans);
@@ -34,6 +33,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   ngOnDestroy(){  }
 
   close(){
+    console.log(this);
     this.onClose.emit(null);
   }
 
