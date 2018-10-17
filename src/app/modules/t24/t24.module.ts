@@ -13,6 +13,8 @@ import { ChartDirective } from './cobmonitor/chart.directive';
 import { CobtableComponent } from './cobtable/cobtable.component';
 import { T24archiveComponent } from './t24archive/t24archive.component';
 import { ArchprocedureComponent } from './archprocedure/archprocedure.component';
+import { ArchdocumentComponent } from './archdocument/archdocument.component';
+import { ArchuprocComponent } from './archuproc/archuproc.component';
 
 import { SplitPipe } from '../../services/split.pipe';
 import { IsdatePipe } from '../../services/isdate.pipe';
@@ -38,7 +40,9 @@ import { IsdatePipe } from '../../services/isdate.pipe';
     T24archiveComponent,
     ArchprocedureComponent,
     SplitPipe,
-    IsdatePipe
+    IsdatePipe,
+    ArchdocumentComponent,
+    ArchuprocComponent
     //AlertComponent
 
   ],

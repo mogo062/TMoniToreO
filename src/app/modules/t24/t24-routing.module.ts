@@ -5,6 +5,8 @@ import { T24Component } from './t24.component';
 import { CobMonitorComponent } from './cobmonitor/cobmonitor.component';
 import { T24archiveComponent } from './t24archive/t24archive.component';
 import { ArchprocedureComponent } from './archprocedure/archprocedure.component';
+import { ArchdocumentComponent } from './archdocument/archdocument.component';
+import { ArchuprocComponent } from './archuproc/archuproc.component';
 
 import { CobResolver } from '../../services/cob.resolver';
 import { TitleResolverService } from '../../services/title.resolver';
@@ -27,6 +29,12 @@ const t24Routes: Routes = [
             keys : KeysResolverService,
             beans : BeansResolverService
           }
+      },
+      {
+          path:'docs', component : ArchdocumentComponent
+      },
+      {
+          path:'uproc', component : ArchuprocComponent
       }
     ]
   }

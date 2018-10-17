@@ -42,10 +42,10 @@ export class T24archiveComponent implements OnInit {
         type: 'button',
       },
     ];
-    formSubmitted(value) {
+  formSubmitted(value) {
         console.log(value);
-      }
-      
+  }
+
   addProcedure(){
     this.archService.getT24ArchiveProcedure().subscribe(success => {
         if (!this.modalRef) {

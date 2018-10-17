@@ -2,75 +2,82 @@
 <ng-template #modalBox></ng-template>
 <div class="clr-row">
   <div class="clr-col-3">
-    <div class="clr-row">
-      <div class="clr-col">
-          <br>
-          <button type="button" class="z-button z-button-square" [routerLink]="['../../t24/archiving/proc']">
-              Add Procedure<br>
-              <img class="z-button-image" src="../../../assets/addProcedure.png">
-          </button>
-      </div>
-      <div class="clr-col">
-         <br>
-          <button type="button" class="z-button z-button-square" (click)="addUproc()">
-              Ajouter une Uproc<br>
-              <img class="z-button-image" src="../../../assets/batch_process.png">
-          </button>
-      </div>
-      <div class="clr-col">
-          <br>
-          <button type="button" class="z-button z-button-square" (click)="addProcedure()">
-              Ajouter une Table<br>
-              <img class="z-button-image" src="../../../assets/addTable.png">
-          </button>
-      </div>
-      <div class="clr-col">
-          <br>
-          <button type="button" class="z-button z-button-square" (click)="addDocument()">
-              Attacher un document<br>
-              <img class="z-button-image" src="../../../assets/addDoc.png">
-          </button>
-      </div>
-      <div class="clr-col">
-          <br>
-          <button type="button" class="z-button z-button-square" (click)="addProcedure()">
-              Ajouter une Date<br>
-              <img class="z-button-image" src="../../../assets/addDate.png">
-          </button>
-      </div>
-      <div class="clr-col">
-          <br>
-          <button type="button" class="z-button z-button-square" (click)="addProcedure()">
-              Planifier Archivage<br>
-              <img class="z-button-image" src="../../../assets/planifier.png">
-          </button>
-      </div>
-      <div class="clr-col">
-          <br>
-          <button type="button" class="z-button z-button-square" (click)="addProcedure()">
-              Executer Archivage<br>
-              <img class="z-button-image" src="../../../assets/run_archi.png">
-          </button>
-      </div>
-      <div class="clr-col">
-          <br>
-          <button type="button" class="z-button z-button-square" (click)="addProcedure()">
-              Analyse<br>
-              <img class="z-button-image" src="../../../assets/graph.png">
-          </button>
-      </div>
+          <div class="clr-row">
+              <div class="clr-col">
+                  <br>
+                  <button type="button" class="z-button z-button-square" [routerLink]="['../../t24/archiving/proc']">
+                      Add Procedure<br>
+                      <img class="z-button-image" src="../../../assets/addProcedure.png">
+                  </button>
+              </div>
+              <div class="clr-col">
+                 <br>
+                  <button type="button" class="z-button z-button-square" [routerLink]="['../../t24/archiving/uproc']">
+                      Ajouter une Uproc<br>
+                      <img class="z-button-image" src="../../../assets/batch_process.png">
+                  </button>
+              </div>
+              <div class="clr-col">
+                  <br>
+                  <button type="button" class="z-button z-button-square" (click)="addProcedure()">
+                      Ajouter une Table<br>
+                      <img class="z-button-image" src="../../../assets/addTable.png">
+                  </button>
+              </div>
+              <div class="clr-col">
+                  <br>
+                  <button type="button" class="z-button z-button-square" [routerLink]="['../../t24/archiving/docs']">
+                      Attacher un document<br>
+                      <img class="z-button-image" src="../../../assets/addDoc.png">
+                  </button>
+              </div>
+              <div class="clr-col">
+                  <br>
+                  <button type="button" class="z-button z-button-square" (click)="addProcedure()">
+                      Ajouter une Date<br>
+                      <img class="z-button-image" src="../../../assets/addDate.png">
+                  </button>
+              </div>
+              <div class="clr-col">
+                  <br>
+                  <button type="button" class="z-button z-button-square" (click)="addProcedure()">
+                      Planifier Archivage<br>
+                      <img class="z-button-image" src="../../../assets/planifier.png">
+                  </button>
+              </div>
+              <div class="clr-col">
+                  <br>
+                  <button type="button" class="z-button z-button-square" (click)="addProcedure()">
+                      Executer Archivage<br>
+                      <img class="z-button-image" src="../../../assets/run_archi.png">
+                  </button>
+              </div>
+              <div class="clr-col">
+                  <br>
+                  <button type="button" class="z-button z-button-square" (click)="addProcedure()">
+                      Analyse<br>
+                      <img class="z-button-image" src="../../../assets/graph.png">
+                  </button>
+              </div>
+
     </div>
   </div>
   <div class="clr-col-9">
     <div class="clr-row">
       <div class="clr-col-12">
-        <dynamic-form
-           [config]="config"
-           (submitted)="formSubmitted($event)">
-         </dynamic-form>
+        <div class="card">
+            <div class="card-block">
+              <dynamic-form
+                 [config]="config"
+                 (submitted)="formSubmitted($event)">
+               </dynamic-form>
+            </div>
+        </div>
+
       </div>
       <div class="clr-col-12">
         <!--ng-template name="t24arch"></ng-template-->
+
         <router-outlet></router-outlet>
       </div>
     </div>
@@ -78,4 +85,9 @@
 
 
   </div>
+</div>
+
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
 </div>

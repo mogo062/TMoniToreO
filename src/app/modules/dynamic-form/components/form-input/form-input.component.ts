@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewContainerRef  } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Field } from '../../models/fields';
 
 @Component({
   selector: 'form-input',
