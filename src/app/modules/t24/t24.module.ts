@@ -15,6 +15,8 @@ import { T24archiveComponent } from './t24archive/t24archive.component';
 import { ArchprocedureComponent } from './archprocedure/archprocedure.component';
 import { ArchdocumentComponent } from './archdocument/archdocument.component';
 import { ArchuprocComponent } from './archuproc/archuproc.component';
+import { ArchtablesComponent } from './archtables/archtables.component';
+import { ArchtablesstatComponent } from './archtablesstat/archtablesstat.component';
 
 import { SplitPipe } from '../../services/split.pipe';
 import { IsdatePipe } from '../../services/isdate.pipe';
@@ -42,7 +44,9 @@ import { IsdatePipe } from '../../services/isdate.pipe';
     SplitPipe,
     IsdatePipe,
     ArchdocumentComponent,
-    ArchuprocComponent
+    ArchuprocComponent,
+    ArchtablesComponent,
+    ArchtablesstatComponent
     //AlertComponent
 
   ],

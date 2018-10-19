@@ -1,6 +1,9 @@
-<div class="dynamic-field form-button"
-      [formGroup]="group">
-      <button type="submit">
-        {{ config.label }}
-      </button>
-    </div>
+    <div 
+          class="dynamic-field form-button"
+          [formGroup]="group">
+          <button
+            [disabled]="config.disabled"
+            type="submit">
+            {{ config.label }}
+          </button>
+        </div>

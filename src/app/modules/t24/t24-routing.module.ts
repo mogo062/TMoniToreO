@@ -7,6 +7,8 @@ import { T24archiveComponent } from './t24archive/t24archive.component';
 import { ArchprocedureComponent } from './archprocedure/archprocedure.component';
 import { ArchdocumentComponent } from './archdocument/archdocument.component';
 import { ArchuprocComponent } from './archuproc/archuproc.component';
+import { ArchtablesComponent } from './archtables/archtables.component';
+import { ArchtablesstatComponent } from './archtablesstat/archtablesstat.component';
 
 import { CobResolver } from '../../services/cob.resolver';
 import { TitleResolverService } from '../../services/title.resolver';
@@ -35,6 +37,12 @@ const t24Routes: Routes = [
       },
       {
           path:'uproc', component : ArchuprocComponent
+      },
+      {
+          path:'tables', component : ArchtablesComponent
+      },
+      {
+          path:'stat', component : ArchtablesstatComponent
       }
     ]
   }

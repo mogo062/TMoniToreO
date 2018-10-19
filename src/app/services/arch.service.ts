@@ -48,6 +48,19 @@ export class ArchService {
     return this.http.get(ConfigService.get('baseWs')+'/t24/arch/du/uproc');
   }
 
+  getT24ArchiveTables(){
+    return this.http.get(ConfigService.get('baseWs')+'/t24/arch/tables');
+  }
+
+  getT24ArchivETablesStat(){
+    return this.http.get(ConfigService.get('baseWs')+'/t24/arch/tables/stat');
+  }
+
+  getT24ArchiveDynamicForm(file : string){
+      console.log("./assets/config/"+file);
+      return this.http.get("./assets/config/"+file);
+  }
+
 }
 
 export interface  procArch {
