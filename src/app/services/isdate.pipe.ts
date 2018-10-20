@@ -12,7 +12,7 @@ export class IsdatePipe implements PipeTransform {
     if((typeof value) === 'number' ) {
       let obj = new String(value);
       if(obj.length === 13){
-        console.log(value);
+      //  console.log(value);
         return this.datePipe.transform(value, 'dd/MM/yyyy');
       }
     }

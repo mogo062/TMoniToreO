@@ -1,8 +1,9 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-
+import { DatePipe } from '@angular/common';
 
 import { FieldConfig } from '../../models/field-config';
+import { Field } from '../../models/field';
 
 @Component({
   exportAs: 'dynamicForm',
@@ -11,17 +12,20 @@ import { FieldConfig } from '../../models/field-config';
   styleUrls: ['./dynamic-form.component.css']
 })
 export class DynamicFormComponent implements OnChanges, OnInit {
+
   @Input()
   config : FieldConfig[] = [];
   @Output()
   submit: EventEmitter<any> = new EventEmitter<any>();
 
   form : FormGroup;
+  private datePipe = new DatePipe("en-US");
 
   get controls() { return this.config.filter(({type}) => type !== 'button'); }
   get changes() { return this.form.valueChanges; }
   get valid() { return this.form.valid; }
   get value() { return this.form.value; }
+
 
   constructor(private fb: FormBuilder) { }
 
@@ -62,7 +66,7 @@ export class DynamicFormComponent implements OnChanges, OnInit {
   }
 
   handleSubmit(event: Event) {
-    console.log(event);
+  //  console.log(event);
     event.preventDefault();
     event.stopPropagation();
     this.submit.emit(this.value);
@@ -86,5 +90,13 @@ export class DynamicFormComponent implements OnChanges, OnInit {
   setValue(name: string, value: any) {
     this.form.controls[name].setValue(value, {emitEvent: true});
   }
-
+  setValue(name: string, value: any, field : Field) {
+    if(field.type === 'button'){ return;}
+    ////console.log(field.name);
+    if(field.type === 'date'){
+      value=this.datePipe.transform(new Date(value), 'dd/MM/yyyy');
+      console.log(value);
+    }
+    this.form.controls[name].setValue(value, {emitEvent: true});
+  }
 }

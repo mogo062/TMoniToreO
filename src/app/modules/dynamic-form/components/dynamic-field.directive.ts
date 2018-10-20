@@ -4,6 +4,10 @@ import { FormGroup } from '@angular/forms';
 import { FormButtonComponent } from './form-button/form-button.component';
 import { FormInputComponent } from './form-input/form-input.component';
 import { FormSelectComponent } from './form-select/form-select.component';
+import { FormDateComponent } from './form-date/form-date.component';
+import { FormNumberComponent } from './form-number/form-number.component';
+
+import { FormHiddenComponent } from './form-hidden/form-hidden.component';
 
 import { Field } from '../models/field';
 import { FieldConfig } from '../models/field-config';
@@ -11,6 +15,9 @@ import { FieldConfig } from '../models/field-config';
 const components :{[type: string]: Type<Field>}= {
   button: FormButtonComponent,
   input: FormInputComponent,
+  hidden: FormHiddenComponent,
+  number: FormNumberComponent,
+  date : FormDateComponent,
   select: FormSelectComponent
 };
 

@@ -27,6 +27,14 @@ export class ArchService {
       });*/
   }
 
+  saveT24ArchiveProcedure(proc : any){
+      return this.http.post(ConfigService.get('baseWs')+'/t24/arch/proc', proc);
+  }
+
+  deleteT24ArchiveProcedure(id : any){
+      return this.http.delete(ConfigService.get('baseWs')+'/t24/arch/proc/'+id);
+  }
+
   getT24ArchiveDocument(){
   //  let headers = new HttpHeaders();
   //  headers.append('Authorization', 'Basic TUctVFJVU1RFRC1DTElFTlQ6c2VjcmV0');
@@ -61,18 +69,4 @@ export class ArchService {
       return this.http.get("./assets/config/"+file);
   }
 
-}
-
-export interface  procArch {
-  id:number,
-  procName:string,
-  procLabel:number,
-  session:string,
-  retention:string,
-  periority:number,
-  executed:boolean,
-  validated:boolean,
-  archDate: Date,
-  nextExec: Date,
-  runDate: Date
 }
