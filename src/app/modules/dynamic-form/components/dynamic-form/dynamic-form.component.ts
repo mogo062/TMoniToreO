@@ -54,7 +54,11 @@ export class DynamicFormComponent implements OnChanges, OnInit {
 
   createGroup() {
     const group = this.fb.group({});
-    this.config.forEach(control => group.addControl(control.name, this.fb.control()));
+    this.config.forEach(control =>{
+        console.log(control.name);
+        console.log(this.fb.control());
+         group.addControl(control.name, this.fb.control());
+    });
     console.log("group : ", group);
     return group;
   }
@@ -90,13 +94,17 @@ export class DynamicFormComponent implements OnChanges, OnInit {
   setValue(name: string, value: any) {
     this.form.controls[name].setValue(value, {emitEvent: true});
   }
-  setValue(name: string, value: any, field : Field) {
-    if(field.type === 'button'){ return;}
-    ////console.log(field.name);
-    if(field.type === 'date'){
-      value=this.datePipe.transform(new Date(value), 'dd/MM/yyyy');
-      console.log(value);
+  setValueWithField(name: string, value: any, fieldConfig : FieldConfig) {
+    if(fieldConfig && fieldConfig.type){
+      if(fieldConfig.type === 'button'){ return;}
+      ////console.log(field.name);
+      if(fieldConfig.type === 'date'){
+        value=this.datePipe.transform(new Date(value), 'dd/MM/yyyy');
+        console.log(value);
+      }
+      this.form.controls[name].setValue(value, {emitEvent: true});
+
     }
-    this.form.controls[name].setValue(value, {emitEvent: true});
+
   }
 }

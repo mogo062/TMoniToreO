@@ -6,22 +6,10 @@ import { FieldConfig } from '../../dynamic-form/models/field-config';
 import { DynamicFormComponent } from '../../dynamic-form/components/dynamic-form/dynamic-form.component';
 
 import { AlertService } from  '../../../services/alert.service';
-import { ArchService } from '../../../services/arch.service';
+import { ArchService, procArch } from '../../../services/arch.service';
 
 
-export interface  procArch {
-  id:number,
-  procName:string,
-  procLabel:number,
-  session:string,
-  retention:string,
-  periority:number,
-  executed:boolean,
-  validated:boolean,
-  archDate: Date,
-  nextExec: Date,
-  runDate: Date
-}
+
 
 
 @Component({
@@ -85,7 +73,19 @@ export class ArchprocedureComponent implements OnInit, AfterViewInit {
           type: "date",
           label: "Next Execution",
           name: "nextExec",
-          placeholder: "Set Next execution"
+          placeholder: "YYYY-MM-DD HH:mm:ss"
+        },
+        {
+          type: "checkbox",
+          label: "validated",
+          name: "validated",
+          placeholder: "validated"
+        },
+        {
+          type: "radio",
+          label: "executed",
+          name: "executed",
+          placeholder: "executed"
         },
         {
           type: "button",
@@ -184,13 +184,13 @@ export class ArchprocedureComponent implements OnInit, AfterViewInit {
   }
 
   onEdit(value : procArch){
-    //console.log(this.form);
+    console.log(this.form);
     //this.form.setValue("procName", "AAA");
     if(value){
       this.config.forEach(field => {
         console.log(field.name+"-->"+value[field.name]);
         //this.form.value[key]=value[key];
-          this.form.setValue(field.name, value[field.name], field);
+        this.form.setValueWithField(field.name, value[field.name], field);
       })
     }
   }

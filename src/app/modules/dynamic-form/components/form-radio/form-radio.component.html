@@ -1,0 +1,13 @@
+  <!--div class="dynamic-field clr-radio-wrapper" [formGroup]="group">
+    <input type="radio" clrRadio [attr.id]="config.name" [formControlName]="config.name" checked>
+    <label [attr.for]="config.name">{{ config.label }}</label>
+
+  </div-->
+<clr-radio-container>
+  <clr-radio-wrapper>
+    <input type="radio" clrRadio [attr.name]="config.name" [formControlName]="config.name"  />
+    <label>{{ config.label }}</label>
+  </clr-radio-wrapper>
+  <clr-control-helper>Helper text</clr-control-helper>
+  <clr-control-error>This field is required!</clr-control-error>
+</clr-radio-container>

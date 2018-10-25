@@ -3,6 +3,20 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ConfigService } from './config.service';
 import { AlertService } from './alert.service';
 
+export interface procArch {
+  id:number;
+  procName:string;
+  procLabel:number;
+  session:string;
+  retention:string;
+  periority:number;
+  executed:boolean;
+  validated:boolean;
+  archDate: Date;
+  nextExec: Date;
+  runDate: Date;
+}
+
 @Injectable({
   providedIn: 'root'
 })

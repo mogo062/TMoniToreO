@@ -6,8 +6,10 @@ import { FormInputComponent } from './form-input/form-input.component';
 import { FormSelectComponent } from './form-select/form-select.component';
 import { FormDateComponent } from './form-date/form-date.component';
 import { FormNumberComponent } from './form-number/form-number.component';
-
 import { FormHiddenComponent } from './form-hidden/form-hidden.component';
+import { FormCheckboxComponent } from './form-checkbox/form-checkbox.component';
+import { FormRadioComponent } from './form-radio/form-radio.component';
+
 
 import { Field } from '../models/field';
 import { FieldConfig } from '../models/field-config';
@@ -18,7 +20,9 @@ const components :{[type: string]: Type<Field>}= {
   hidden: FormHiddenComponent,
   number: FormNumberComponent,
   date : FormDateComponent,
-  select: FormSelectComponent
+  select: FormSelectComponent,
+  radio: FormRadioComponent,
+  checkbox : FormCheckboxComponent
 };
 
 @Directive({

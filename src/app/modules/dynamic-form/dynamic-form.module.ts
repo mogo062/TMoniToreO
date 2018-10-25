@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClarityModule } from '@clr/angular';
@@ -11,6 +11,8 @@ import { FormSelectComponent } from './components/form-select/form-select.compon
 import { FormDateComponent } from './components/form-date/form-date.component';
 import { FormNumberComponent } from './components/form-number/form-number.component';
 import { FormHiddenComponent } from './components/form-hidden/form-hidden.component';
+import { FormCheckboxComponent } from './components/form-checkbox/form-checkbox.component';
+import { FormRadioComponent } from './components/form-radio/form-radio.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { FormHiddenComponent } from './components/form-hidden/form-hidden.compon
     FormButtonComponent,
     FormDateComponent,
     FormNumberComponent,
-    FormHiddenComponent
+    FormHiddenComponent,
+    FormCheckboxComponent,
+    FormRadioComponent
   ],
   exports: [DynamicFormComponent],
   entryComponents: [
@@ -36,7 +40,9 @@ import { FormHiddenComponent } from './components/form-hidden/form-hidden.compon
     FormButtonComponent,
     FormDateComponent,
     FormNumberComponent,
-    FormHiddenComponent
+    FormHiddenComponent,
+    FormCheckboxComponent,
+    FormRadioComponent
   ]
 })
 export class DynamicFormModule { }
